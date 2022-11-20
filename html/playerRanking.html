@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script src="./js/playerRanking.js"></script>
+    <link rel="stylesheet" href="./css/index.css">
+    <style>
+        table,
+        tr,
+        td,
+        th {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="./index.html" class="logo">Raiddon</a>
+            <ul class="nav-list">
+                <li><a href="./playerRanking.html">Player Ranking</a></li>
+                <li><a href="./userReports.html">Player Reports</a></li>
+                <li><a href="./reportFights.html">Fight Reports</a></li>
+                <li><a href="./encounters.html">Encounters</a></li>
+            </ul>
+        </nav>
+    </header>
+    <br />
+    <br />
+    <center>
+        <div class="complete">
+            <div class="form">
+                <label>Character Name: <input id="name" type="text"></label>
+                <label>Server: <input id="server" type="text"></label>
+                <label>Region: <input id="region" type="text"></label>
+                <span id="error"></span>
+                <button onclick="publishToTable()">Submit</button>
+            </div>
+    </center>
+    <br />
+    <div id='table'>
+        <table>
+            <!-- <tr>
+                        <th>---id---</th>
+                        <th>encounterName--------</th>
+                        <th>class----</th>
+                        <th>spec</th>
+                        <th>rank---</th>
+                        <th>-outOf-</th>
+                        <th>duration--</th>
+                        <th>startTime-------</th>
+                        <th>reportID-------------------</th>
+                        <th>f</th>
+                        <th>d</th>
+                        <th>s</th>
+                        <th>characterID-</th>
+                        <th>name</th>
+                        <th>server----</th>
+                        <th>percentile--------------</th>
+                        <th>ilvl</th>
+                        <th>total-----------------</th>
+                        <th>estm</th>
+                      </tr> -->
+        </table>
+    </div>
+
+    </div>
+</body>
+
+</html>

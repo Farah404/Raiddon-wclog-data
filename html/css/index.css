@@ -1,0 +1,63 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+
+:root {
+    --fontedestaque: 'Abril Fatface', cursive;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 5px;
+    transition: 0.3s;
+    border-radius: 5px;
+
+}
+
+a:hover {
+    opacity: 0.7s;
+    background-color: rgb(255, 255, 255);
+    
+    color: #000000;
+    transition-duration: 0.5s;
+}
+
+.logo {
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: var(--fontedestaque);
+    background-color: #2D4752;
+    height: 15vh;
+
+}
+
+main {
+    background: url("https://images4.alphacoders.com/823/thumb-1920-82368.jpg") no-repeat
+    center center;
+    background-size: cover;
+    height: 92vh;
+}
+
+.nav-list  {
+    list-style-type: none;
+    display: flex;
+}
+
+.nav-list li {
+    letter-spacing: 3px;
+    margin-left: 32px;
+}

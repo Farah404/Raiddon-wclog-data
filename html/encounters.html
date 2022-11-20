@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script src="./js/encounters.js"></script>
+    <link rel="stylesheet" href="./css/index.css">
+    <style>
+        table,
+        tr,
+        td,
+        th {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="./index.html" class="logo">Raiddon</a>
+            <ul class="nav-list">
+                <li><a href="./playerRanking.html">Player Ranking</a></li>
+                <li><a href="./userReports.html">Player Reports</a></li>
+                <li><a href="./reportFights.html">Fight Reports</a></li>
+                <li><a href="./encounters.html">Encounters</a></li>
+            </ul>
+        </nav>
+    </header>
+    <br />
+    <br />
+    <center>
+    <div class="complete">
+        <div class="form">
+            <label>Encounter ID: <input id="encounterId" type="text"></label>
+            <span id="error"></span>
+            <button onclick="publishToTable()">Submit</button>
+        </div>
+        </center>
+        <br />
+        <div id='table'>
+            <table>
+            </table>
+        </div>
+
+    </div>
+</body>
+
+</html>
