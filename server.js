@@ -1,9 +1,13 @@
 var express = require('express');
 const createError = require('http-errors');
 var app = express();
+const scheduledFunctions = require('./scheduledFunctions')
 
 var jsonParser = express.json({ extended: true });
 app.use(jsonParser);
+
+// Call to execute scheduled function(s)
+scheduledFunctions.initScheduledJobs();
 
 // CORS enabled with express/node-js :
 app.use(function (req, res, next) {
@@ -41,7 +45,6 @@ app.use((err, req, res, next) => {
 })
 
 
-app.listen(8383, function () {
-  console.log("RAIDDON listening on 8383");
-  console.log("http://localhost:8383");
-  });
+app.listen(process.env.PORT || 3000, function(){
+  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+});
