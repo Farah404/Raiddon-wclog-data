@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;600&family=Raleway:wght@700&display=swap');
+
+    * {
+      font-family: 'Raleway', sans-serif;
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --color-primary: #1fb2ed;
+      --color-white: #e8e6e3;
+      --color-black: #030910;
+      --color-dark: #1a1d27;
+      --color-gray: #9d9487;
+
+
+      --font-Poppins: 'Poppins', sans-serif;
+      --font-Raleway: 'Raleway', sans-serif;
+      --font-OpenSans: 'Open Sans', sans-serif;
+
+      --font-lg: 64px;
+      --font-md: 26px;
+      --font-sm: 15px;
+      --font-xs: 9px;
+
+      --size-lg: 1280px;
+      --size-md: 976px;
+      --size-sm: 768px;
+      --size-xs: 500px;
+    }
+
+    html,
+    body {
+      height: 100%;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    div.container {
+      width: 100%;
+      height: 100%;
+    }
+
+    .container-aside {
+      width: 20%;
+      max-width: 300px;
+      min-width: 300px;
+      height: 100%;
+      position: fixed;
+      left: 0;
+      top: 0;
+      z-index: 4;
+      background-color: var(--color-black);
+      transition: left 1s;
+    }
+
+    .showMenu {
+      left: 0 !important;
+    }
+
+    .container-main {
+      width: 100%;
+      height: 100%;
+      background: url("https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/88e68c107794279.5faee86ab0b18.gif") no-repeat center;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .containerMain-backgroundFilter {
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.253);
+      position: absolute;
+      z-index: 2;
+    }
+
+    .containerMain-lblName,
+    .containerMain-lblAbility {
+      font-size: var(--font-lg);
+      color: var(--color-white);
+      position: relative;
+      z-index: 3;
+      margin-left: 30vw;
+    }
+
+    .containerMain-lblAbility {
+      font-family: var(--font-Poppins);
+      font-size: var(--font-md);
+      font-weight: 400;
+    }
+
+    .containerMain-lblAbility span {
+      border-bottom: 3px solid var(--color-primary);
+    }
+
+    .containerMain-ShowMenu {
+      display: none;
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      z-index: 5;
+      border: none;
+      font-family: var(--font-OpenSans);
+      font-size: var(--font-md);
+      background-color: var(--color-primary);
+      color: var(--color-white);
+      cursor: pointer;
+    }
+
+    .container-aside,
+    .asideHeader-userInformations {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px 0;
+    }
+
+    .asideHeader-userInformations {
+      padding: 0;
+    }
+
+    .asideHeader-imgUserImage {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 8px solid #7a7265;
+      margin-bottom: 20px;
+    }
+
+    .asideHeader-lblUserName {
+      font-family: var(--font-Poppins);
+      font-size: var(--font-md);
+      font-weight: 600;
+      color: var(--color-white);
+      margin-bottom: 20px;
+    }
+
+    .asideHeader-btnSocial {
+      padding: 10px 12px;
+      margin: 0 2px;
+      border-radius: 50%;
+      background-color: var(--color-dark);
+      color: var(--color-white);
+      font-size: var(--font-sm);
+      transition: background-color .5s;
+    }
+
+    .asideHeader-btnSocial:hover {
+      background-color: var(--color-primary);
+    }
+
+    .containerAside-main,
+    .asideMain-menuItemsBox {
+      width: 100%;
+      margin: 0px 0;
+    }
+
+    .asideMain-menuItem {
+      margin: 15px 0;
+    }
+
+    .asideMain-menuItemsBox {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding-left: 30px;
+    }
+
+    .mainMenu-btnMenuItem {
+      color: var(--color-gray);
+      font-family: var(--font-OpenSans);
+      font-size: var(--font-sm);
+      font-weight: 400;
+      transition: color .5s;
+    }
+
+    .mainMenu-btnMenuItem i {
+      font-size: 24px;
+    }
+
+    .mainMenu-btnMenuItem:hover {
+      color: var(--color-white);
+    }
+
+    .mainMenu-btnMenuItem:hover i {
+      color: var(--color-primary);
+    }
+
+    .mainMenu-btnMenuItem:focus {
+      color: var(--color-white);
+    }
+
+    .mainMenu-btnMenuItem:focus i {
+      color: var(--color-primary);
+    }
+
+    .mainMenu-lblMenuItem {
+      display: inline;
+      margin-left: 5px;
+    }
+
+    .containerAside-footer {
+      width: 100%;
+      height: 100px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .asideFooter-lblCopyRight,
+    .asideFooter-lblInfo {
+      font-family: var(--font-OpenSans);
+      font-size: var(--font-sm);
+      font-weight: 400;
+      color: #accbef;
+    }
+
+    .asideFooter-lblInfo {
+      font-size: 13px;
+      color: var(--color-white);
+      margin-top: 10px;
+    }
+
+    .asideFooter-lblInfo strong {
+      color: #36b2ed;
+    }
+
+    @media screen and (max-width: 1200px) {
+      .container-aside {
+        left: -500px;
+      }
+
+      .containerMain-ShowMenu {
+        display: block;
+      }
+
+      .containerMain-lblName,
+      .containerMain-lblAbility {
+        margin-left: 10vw;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      .containerMain-lblName {
+        font-size: 28px;
+      }
+    }
+  </style>
+
+  <title>Raiddon Warcraft Logs API</title>
+</head>
+
+<body>
+  <div class="container">
+    <aside class="container-aside">
+      <div class="containerAside-header">
+        <div class="asideHeader-userInformations">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/WoW_icon.svg/1200px-WoW_icon.svg.png"
+            alt="" class="asideHeader-imgUserImage">
+          <h3 class="asideHeader-lblUserName">Raiddon Wclog API</h3>
+        </div>
+          <p class="asideFooter-lblCopyRight">© Copyright <strong>Farah404</strong></p>
+      </div>
+      <div class="containerAside-main" style=" overflow-y: auto;">
+        <div class="asideMain-menuItemsBox">
+          <div class="asideMain-menuItem">
+            <a href="https://raiddon-wclog-api.herokuapp.com/api/reports" class="mainMenu-btnMenuItem"><i class="bi bi-trophy-fill"></i> <span
+                class="mainMenu-lblMenuItem">Reports</span></a>
+          </div>
+          <div class="asideMain-menuItem">
+            <a href="https://raiddon-wclog-api.herokuapp.com/api/encounters" class="mainMenu-btnMenuItem"><i class="bi bi-trophy-fill"></i> <span
+                class="mainMenu-lblMenuItem">Encounters</span></a>
+          </div>
+
+
+        </div>
+      </div>
+      
+    </aside>
+    <main class="container-main">
+      <div class="containerMain-backgroundFilter"></div>
+      <h1 class="containerMain-lblName">Raiddon</h1>
+      <p class="containerMain-lblAbility">by <strong><a href="https://github.com/Farah404">Farah404</strong></a></p>
+
+    </main>
+  </div>
+</body>
+
+</html>

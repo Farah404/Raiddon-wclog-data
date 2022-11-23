@@ -71,6 +71,11 @@ You will need to [install python](https://www.python.org/downloads/) and add it 
 {'id': 51, 'name': 'Archimonde', 'startTime': 23565082, 'endTime': 23766114}, 
 {'id': 52, 'name': 'Archimonde', 'startTime': 24402390, 'endTime': 24667629}]
 ```
+
+# Heroku Deployment
+
+[Raiddon WarcraftLogs API](https://raiddon-wclog-api.herokuapp.com/html/index.html)
+
 ## Viewing Detailed Documentation
 
 GraphQL uses schemas that document everything, so if you use a client like Insomnia, you can fetch the schemas and start browsing the API documentation in the client itself.
