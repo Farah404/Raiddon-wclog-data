@@ -2,7 +2,7 @@
 node_modules
 
 node_modules
-
+.env
 
 # Logs
 logs
@@ -48,7 +48,7 @@ ssl/
 *.key
 
 # Environment variables
-
+.env
 
 # Local database 
 db/
