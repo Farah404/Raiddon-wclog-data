@@ -4,6 +4,7 @@ module.exports = (app) => {
 
   app.use('/api', require('./app/encounters'))
   app.use('/api', require('./app/reports'))
+  app.use('/api', require('./app/playersRankings'))
 
   app.use("*", function (req, res) {
     res.redirect("/");

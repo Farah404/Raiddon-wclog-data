@@ -6,6 +6,7 @@ var cors = require('cors');
 
 app.use(require('./src/routes/app/encounters'));
 app.use(require('./src/routes/app/reports'));
+app.use(require('./src/routes/app/playersRankings'));
 
 
   dbo.connectToServer(function (err) {
